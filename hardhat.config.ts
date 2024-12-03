@@ -83,6 +83,10 @@ const hardhatConfig = {
         count: 20,
       },
     },
+    testnet: {
+      url: process.env.ETH_RPC_URL,
+      accounts: [`0x${process.env.PRIVATE_KEY}`],
+    },
   },
   namedAccounts: {
     ...DEFAULT_NAMED_ACCOUNTS,
@@ -90,7 +94,7 @@ const hardhatConfig = {
   external: {
     contracts: [
       {
-        artifacts: './temp-artifacts',
+        artifacts: './artifacts',
         deploy: 'node_modules/@aave/deploy-v3/dist/deploy',
       },
     ],
